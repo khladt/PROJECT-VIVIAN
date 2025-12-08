@@ -1,6 +1,4 @@
-/* ---------------------------------------------------- */
-/* 0. BASE STYLES & RESETS */
-/* ---------------------------------------------------- */
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -8,20 +6,15 @@ body {
     line-height: 1.6;
 }
 
-img{
-    max-width: 100%;
-    height: auto;
-}
 
-/* ---------------------------------------------------- */
-/* 1. HEADER & NAVIGATION */
-/* ---------------------------------------------------- */
+
 .site-header {
+    display: none;
     /* KEY: Makes the header stick to the top */
-    background-color: #020304;
+    background-color: #010102;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it is above all other content */
+    z-index: 1000; 
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -61,49 +54,194 @@ img{
 }
 
 .navigation ul a:hover {
-    color: #fca311; /* Accent color for hover */
+    color: #fca311; 
 }
 
-.wishlist-section{
-    display: flex;
-    height: 100vh;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
 
 .dashboard{
     display: flex;
-    height: 100vh;
-
-    color: white;
-
+    width: 100%;
+    height: auto;
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    margin-top: 32vh;
-
+    padding-top: 32vh;
+    background-color: #010102;
 }
 
 
 .dashboard h3{
-    font-size:4vh;
+    font-size:2vh;
+    color: white;
+
 }
 
 
-#story-parallax{
+#story-parallax {
+    position: relative;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    width: 100%;   
+    background-color: #010102;
+
+    
 }
 
-#story-parallax svg{
-    height: 100%;
-    width: 100%;
-    object-position: center;
-    background-color: #020304; /* Light green/off-white background */
+.parallax-layer {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+}
 
+.parallax-layer img{
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.fog{
+    opacity: 80%;
+}
+
+.dialogue-box {
+    position: fixed;
+    bottom: 0;
+    width: 24vw;
+    z-index: 1000;
+    
+    background-color: #000000;
+    border: 3px solid #565555;
+    box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
+    border-radius: 74px;
+    
+    display: flex;
+    align-items: flex-start;
+    margin: 64px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border: 3px solid #565555;
+    overflow: hidden;
+    border-radius: 128px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dialogue-content {
+    flex-grow: 1;
+    padding-left: 15px;
+    color: white;
+}
+
+.character-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.dialogue-text {
+    margin: 0;
+    font-family: monospace, sans-serif;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+.Seven{
+    position: relative;
+    background-image: url('img/Seven/sss.png');
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(10%) hue-rotate(340deg) saturate(70%) grayscale(30%);
+}
+.Seven.is-back {
+    /* Apply the specific keyframe animation */
+    animation: propeller-back 0.3s steps(2) infinite;
+}
+.Seven.is-front {
+    animation: propeller-front 0.3s steps(2) infinite;    
+}
+.Seven.is-front-wave {
+    animation: propeller-front-wave 0.3s steps(2) infinite;
+}
+.Seven.is-side {
+    animation: propeller-side 0.3s steps(2) infinite;
+}
+
+@keyframes propeller-back {
+    from { background-position: 0px 0; }
+    to { background-position: -400px 0; }
+}
+@keyframes propeller-front {
+    from { background-position: -600px 0; }
+    to { background-position: -200px 0; }
+}
+@keyframes propeller-front-wave {
+    from { background-position: -800px 0; }
+    to { background-position: -1200px 0; }
+}
+@keyframes propeller-side {
+    from { background-position: -1200px 0; }
+    to { background-position: -1600px 0; }
+}
+
+/* ==========================================
+   SCENE 1 LAYERS
+   ========================================== */
+
+.quinn-character-s1{
+    top: -10.5%;
+    left: 5.9%;
+    width: 19.8%;
+    object-fit: contain;
+    will-change: opacity;
+}
+
+#S1-FG{
+    position: absolute;
+    z-index: 1;
+}
+
+
+#S1-L1{
+    width: 50%;
+    left: 25%;
+}
+#S1-L2{
+    width: 90%;
+    left: 0%;
+}
+#S1-TOWER{
+    width: 20%;
+    left: 41%;
+}
+
+  /* ========================================== */
+
+
+.wishlist-section{
+    display: flex;
+    width: 100%;
+    height: auto;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 16vh;
+    padding-bottom: 32vh;
+    background-color: #010102;
 }
 
 
@@ -117,7 +255,7 @@ img{
 
     cursor: pointer;
     
-    background-image: url('img/Button_UI_NORMAL.webp');
+    background-image: url('img/UI/Button_UI_NORMAL.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -132,43 +270,30 @@ img{
     height: 16vh;
     width:32vh;
 
-
     cursor: pointer;
     
-    background-image: url('img/Button_UI_SELECTED.webp');
+    background-image: url('img/UI/Button_UI_SELECTED.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* ---------------------------------------------------- */
-/* 3. FOOTER */
-/* ---------------------------------------------------- */
+
 .site-footer {
     background-color: #1a1a1a;
     color: #999;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     font-size: 0.8em;
 }
 
-/* ---------------------------------------------------- */
-/* 4. RESPONSIVENESS (Basic adjustment for mobile view) */
-/* ---------------------------------------------------- */
+
+#static-scene { display: none; }
+
 @media (max-width: 768px) {
-    .dashboard h1{
-        padding-top: 16vh;
-        position: fixed;
-        font-size:8vh;
-    }
-    .navigation {
-        flex-direction: column;
-        padding-top: 10px;
-    }
-    .navigation ul {
-        margin-top: 10px;
-    }
-    .navigation ul li {
-        margin: 0 10px;
-    }
+    #story-parallax { display: none !important; }
+    #static-scene { display: block; }
+    .dashboard{display: none;}
+    .dialogue-box{display: none;}
+
 }
