@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Adding user-scalable=no prevents accidental zooming, which is often desirable for fixed-scroll animations.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Project-Vivian</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <div id="loader-wrapper" class="loader-active">
+        <div class="loader-content">
+            <h1>K.T. STUDIO</h1>
+            <div class="loading-bar"></div> 
+            <p>Loading Motion Comic...</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <nav class="navigation">
             <div class="logo">K.T. STUDIO</div>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="aboutus.html">About</a></li>
             </ul>
         </nav>
     </header>
-
 
 
     <div id="smooth-wrapper">
 
         <div class="dialogue-box">
             <div class="profile-image">
-                <img src="img/UI/PROFILES/QUINN-PROFILE.webp" alt="Character Profile">
+                <img id="chara-quinn" src="img/UI/PROFILES/QUINN-PROFILE.webp" alt="Character Profile">
+                <img id="chara-seven" src="img/UI/PROFILES/SEVEN-PROFILE.webp" alt="Character Profile">
             </div>
             <div class="dialogue-content">
                 <div class="character-name"></div>
@@ -32,10 +41,12 @@
         </div>
 
         <div id="smooth-content">
+    
             <!-- SECTION 1: DASHBOARD -->
             <div class="dashboard">
                 <div class="content-box">
                     <img src="img/UI/Title.webp" alt="Title" onerror="this.style.display='none'">
+                    <h3>For better experience, please go fullscreen.<button class="cta-button" id="fullscreenToggle">Go Fullscreen (F11)</button></h3>
                     <h3>Scroll Down &darr;</h3>
                 </div>
             </div>
@@ -48,9 +59,9 @@
                 <!-- Scene 1 Layers -->
                 <div class="parallax-layer" id="S1-BG"> <img src="img/Layers/S1-BG.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S1-TOWER"> <img src="img/Layers/S1-TOWER.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer fog" id="S1-FOG-2"> <img src="img/Layers/S1-FOG.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S1-FOG-2"> <img src="img/Layers/S1-FOG.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S1-L2"> <img src="img/Layers/S1-L2.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer fog" id="S1-FOG-1"> <img src="img/Layers/S1-FOG.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S1-FOG-1"> <img src="img/Layers/S1-FOG.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S1-L1"> <img src="img/Layers/S1-L1.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S1-L0"> <img src="img/Layers/S1-L0.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S1-FOG-0"> <img src="img/Layers/S1-FOG.webp" alt="" loading="eager"> </div>
@@ -64,7 +75,8 @@
 
                 <!-- Scene 2 Layers -->
 
-            <div class="parallax-layer Seven"></div>
+            
+            <div class="Seven"></div>
             </section>
             
             <!-- SECTION 3: WISHLIST -->
@@ -88,6 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/general.js"></script>
     
 </body>
 </html>
