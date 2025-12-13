@@ -199,7 +199,6 @@ img{
 
 .Quinn{
     position: relative;
-    z-index: 1;
     background-image: url('img/Quinn/Quinn_Walking-s4.webp');
     background-repeat: no-repeat;
     width: 11%;
@@ -213,15 +212,22 @@ img{
 
 }
 
-.Quinn.a{background-position: -3%;}
-.Quinn.b{background-position: 30%;}
-.Quinn.c{background-position: 65%;}
-.Quinn.d{background-position: 100%;}
+.Quinn.a{
+    top: 19.7%;
+    background-position: -3%;}
+.Quinn.b{
+    top: 20%;
+    background-position: 30%;}
+.Quinn.c{
+    top: 19.7%;
+    background-position: 65%;}
+.Quinn.d{
+    top: 20%;
+    background-position: 100%;}
 
 .Quinn-lantern{
     position: absolute;
-    z-index: -2;
-    width: 76%;
+    width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
     left: 0%;
@@ -230,9 +236,16 @@ img{
     background-repeat: no-repeat;
     background-image: url('img/Quinn/quinn-wc-light-2-4.webp');
     will-change: opacity,transform;
+    animation: breathing 1s infinite;
 }
 .Quinn-lantern.a,.Quinn-lantern.c{background-image: url('img/Quinn/quinn-wc-light-1-3.webp');}
 .Quinn-lantern.b,.Quinn-lantern.d{background-image: url('img/Quinn/quinn-wc-light-2-4.webp');}
+
+@keyframes breathing {
+    0% {filter: brightness(50%);}
+    50% {filter: brightness(100%);}
+    100% {filter: brightness(50%); }
+}
 
 
 .Seven{
@@ -246,35 +259,34 @@ img{
     background-repeat: no-repeat;
     filter: brightness(10%) hue-rotate(340deg) saturate(70%) grayscale(30%);
 }
-.Seven.is-back {
-    /* Apply the specific keyframe animation */
-    animation: propeller-back 0.3s steps(2) infinite;
-}
-.Seven.is-front {
-    animation: propeller-front 0.3s steps(2) infinite;    
-}
-.Seven.is-front-wave {
-    animation: propeller-front-wave 0.3s steps(2) infinite;
-}
-.Seven.is-side {
-    animation: propeller-side 0.3s steps(2) infinite;
-}
+.Seven.is-back {animation: propeller-back 0.3s steps(2) infinite;}
+.Seven.is-front {animation: propeller-front 0.3s steps(2) infinite;}
+.Seven.is-front-wave {animation: propeller-front-wave 0.3s steps(2) infinite;}
+.Seven.is-side {animation: propeller-side 0.3s steps(2) infinite;}
 
 @keyframes propeller-back {
-    from { background-position: 0px 0; }
-    to { background-position: -400px 0; }
+    from { background-position: 0% 0; }
+    to {
+        top: 0.2%;
+        background-position: 28.5% 0; }
 }
 @keyframes propeller-front {
     from { background-position: 28.5% 0; }
-    to { background-position: 57.5% 0; }
+    to {
+        top: 0.2%;
+        background-position: 57.5% 0; }
 }
 @keyframes propeller-front-wave {
     from { background-position: 57% 0; }
-    to { background-position: 85.7% 0; }
+    to {
+        top: 0.2%;
+        background-position: 85.7% 0; }
 }
 @keyframes propeller-side {
-    from { background-position: -1200px 0; }
-    to { background-position: -1600px 0; }
+    from { background-position:  100% 0; }
+    to { 
+        top: 0.2%;
+        background-position: 71% 0;}
 }
 
 /* ==========================================
@@ -286,6 +298,7 @@ img{
     left: 5.9%;
     width: 19.8%;
     object-fit: contain;
+    animation: breathing 5s infinite;
 }
 
 #S1-FG,
@@ -316,6 +329,35 @@ img{
 
 #S4-FG{
     z-index: -2;
+}
+
+.fog{
+    position: absolute;
+    background: url("img/Layers/S1-FOG.webp") repeat-x;
+    background-size: 90% auto;
+    animation-name: fogAnim;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.fog.fone {
+    background-position: 0%;
+    opacity: 1.0;
+    top: 4%;
+    animation-duration: 15s;}
+.fog.ftwo {
+    background-position: 50%;
+    top: -12%;
+    animation-duration: 120s; }
+.fog.fthree {
+    background-position: 100%;
+    top: -50%;
+    opacity: 0.6;
+    animation-duration: 120s;}
+
+
+@keyframes fogAnim{
+    from{background-position: 0px top;}
+    to{background-position: 1700px top;}
 }
 
   /* ========================================== */
@@ -650,6 +692,21 @@ img{
     line-height: 2.5vh;
 }
 
+
+.fog.fone {
+    background-position: 0%;
+    opacity: 1.0;
+    top: -9%;
+    animation-duration: 85s;}
+.fog.ftwo {
+    background-position: 50%;
+    top: -3%;
+    animation-duration: 180s; }
+.fog.fthree {
+    background-position: 100%;
+    top: -5%;
+    opacity: 0.6;
+    animation-duration: 300s;}
 
 }
 
