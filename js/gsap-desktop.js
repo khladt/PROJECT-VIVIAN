@@ -1,7 +1,11 @@
 import { setSmootherInstance } from "./utils.js";
 
+
 export function startDesktopGSAP(s, q, f) {
-    
+
+    const path = document.querySelector('#travelPath');
+    const pathLength = path.getTotalLength();
+
     const smootherInstance = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
@@ -10,7 +14,6 @@ export function startDesktopGSAP(s, q, f) {
         effects: true,
     });
     
-    // Pass the instance back to be managed by main.js
     setSmootherInstance(smootherInstance); 
 
 
@@ -28,12 +31,14 @@ export function startDesktopGSAP(s, q, f) {
 
     runAnimation
 
+    .set(path, {strokeDashoffset: pathLength })
+    .set(".fhead",{opacity:0})
+
     .fromTo('.dialogue-box',{x:"300vh", y:"-100vh" ,scale: 0.0}, {x:"35vw",y:"-20vh" ,scale: 1, duration: 2 })
     .to('.character-name', {text: s, duration: 5 },"<")
     .to('#chara-quinn',{opacity:0,duration:1},"<")
     .to('#chara-seven',{opacity:1,duration:1},"<")
     .to('.dialogue-text',{text: "Quinnny-Que. Kweeeeen!", duration: 9 },"<")
-
 
     .fromTo('.site-header', { opacity: 1}, {opacity: 0, duration: 1 },0)
     
@@ -187,7 +192,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: '*GOD DAMMIT, V. SHUT UP!', duration: 16 },"<")
+.to('.dialogue-text',{text: 'DAMMIT, V. SHUT UP!', duration: 16 },"<")
 
 
 .to('#S2-LW', {opacity:0.3,y:"17%",duration: 5},"+=10")
@@ -496,7 +501,73 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-box',{x:"100vw",y:"-85vh", duration: 15 },"<")
 .to('#S4-FG',{y:'-200%',duration: 25})
 
-.to('.site-header',{opacity: 1, duration: 4 },"<")
+.fromTo('#S5-SVG',{},{duration: 25},"<")
+
+
+.fromTo(path,{strokeDasharray:pathLength,strokeDashoffset: pathLength} , {strokeDashoffset: 0,duration: 150,ease: "none"})
+.to("#traveler-heads", { motionPath: { path: "#travelPath", align: "#travelPath", alignOrigin: [0.5, 0.5]},duration: 150,ease: "none"}, "<")
+.fromTo("#S5-SVG",{y:"-10%"} , {y:"-160%",duration: 200},"<")
+
+.to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },"<")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "Whoever this 'Arno' fella is that you want to kill so bad... he doesn't deserve to hold the name of our glorious Emperor Arno Von Vivian!", duration: 35 },"<")
+
+.to('.dialogue-box',{x:"2vw",y:"-30vh", duration: 15 },">+=15")
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "Yeah... you're right about that.", duration: 5 },"<")
+
+
+.to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },">+=8")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "Then let's go show that fraud a bad time, huh "+q+"? FOR ALLARSSYN!!", duration: 25 },"<")
+
+.to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "For... Allarssyn.", duration: 15 },"<")
+
+
+.to('.dialogue-box',{x:"170vw",y:"-60vh", duration: 15 },">+=25")
+
+.to('.dialogue-box',{x:"70vw",y:"-60vh", duration: 15 })
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "Hehe! Quinn, stop! It tickles... Wait... SINCE WHEN I CAN FEEL TICKLES?!", duration: 25 },"<")
+
+
+.to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "Dude... I'm not even touching you...", duration: 15 },"<")
+
+.to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "...", duration: 15 },"<")
+
+
+.to('.fhead',{opacity:1.0,duration: 1 },">+=15")
+.to("#S5-SVG",{y:"-230%",duration: 30})
+
+.to('.dialogue-box',{x:"15vw",y:"-70vh", duration: 15 },">+=15")
+.to('.character-name', {text: f, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "Good evening, everyone. I’m taking OUR father home, if you don't mind... SISTER!", duration: 35 },"<")
+
+
+.to('.site-header',{opacity: 1, duration: 4 })
 
     return smootherInstance;
 }

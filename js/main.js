@@ -46,7 +46,7 @@ function hideSplashGate() {
 function initGSAP() {
     lockScroll(); 
     
-    gsap.registerPlugin(Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
+    gsap.registerPlugin(MotionPathPlugin ,Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
 
     const parallaxImages = document.querySelectorAll('#story-parallax img');
     const imagesToLoad = Array.from(parallaxImages).filter(img => !img.complete);
