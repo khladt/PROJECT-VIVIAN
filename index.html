@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--Adding user-scalable=no prevents accidental zooming, which is often desirable for fixed-scroll animations.-->
+    <!--Adding user-scalable=no prevents accidental zooming-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Project-Vivian</title>
     <link rel="stylesheet" href="styles.css">
@@ -10,12 +10,43 @@
 
 </head>
 <body>
+    <!--BG SFX-->
+    <audio id="s0-bg" loop src="sound/bg/s0-bg.mp3" ></audio>
+    <audio id="s1-bg" loop src="sound/bg/s1-bg.mp3" ></audio>
+    <audio id="s2-bg" loop src="sound/bg/s2-bg.mp3" ></audio>
+    
+    <!--SFX-->
+    <audio id="f0" src="sound/sfx/footstep0.mp3" ></audio>
+    <audio id="f1" src="sound/sfx/footstep1.mp3" ></audio>
+    <audio id="f2" src="sound/sfx/footstep2.mp3" ></audio>
+    <audio id="f3" src="sound/sfx/footstep3.mp3" ></audio>
+    <audio id="rs" src="sound/sfx/record-scratch.mp3" ></audio>
+    <audio id="ex" src="sound/sfx/expo.mp3" ></audio>
+    <audio id="ex-rev" src="sound/sfx/expo-rev.mp3" ></audio>
+    <audio id="gshot" src="sound/sfx/gshot.mp3" ></audio>
+    <audio id="gshot-rev" src="sound/sfx/gshot-rev.mp3" ></audio>
+
+    <!-- MUSIC -->
+    <audio id="ash-0" loop src="sound/music/Ash0.mp3" ></audio>
+    <audio id="ash-1" loop src="sound/music/Ash1.mp3" ></audio>
+    <audio id="gyard" loop src="sound/music/Graveyard.mp3" ></audio>
+
+    <audio id="r0" loop src="sound/music/Rebel0.mp3" ></audio>
+    <audio id="r1" loop src="sound/music/Rebel1.mp3" ></audio>
+    <audio id="r2" src="sound/music/Rebel2.mp3" ></audio>
+
+    <!-- UI -->
+    <audio id="vslider" loop src="sound/ui/vslider.mp3" ></audio>
+    <audio id="press" src="sound/ui/press.mp3" ></audio>
+
+
 
     <div id="loader-wrapper" class="loader-active">
         <div class="loader-content">
-            <h1>K.T. STUDIO</h1>
-            <div class="loading-bar"></div> 
-            <p>Loading Motion Comic...</p>
+            <h1 id="loading-title">K.T. STUDIO</h1>
+            <div id="loading-bar"></div> 
+            <p id="loading-text">Loading Motion Comic...</p>
+            <button class="cta-button" id="start-btn" style="opacity: 0; visibility: hidden;">START</button>
         </div>
     </div>
 
@@ -47,10 +78,16 @@
             <!-- SECTION 1: DASHBOARD -->
             <div class="dashboard">
                 <div class="content-box">
-                    <img src="img/UI/Title.webp" alt="Title" onerror="this.style.display='none'">
-                    <h3>For a better experience, please go fullscreen.</h3>
-                    <button class="cta-button" id="fullscreenToggle">Go Fullscreen (F11)</button>
-                    <h3>Scroll Down &darr;</h3>
+                    <img src="img/UI/Title.webp" alt="Title">
+                    <br>
+                    <div class="volume-container">
+                        <span>Adjust the volume</span>
+                        <span>0% <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.0"> 100%</span>
+                        
+                    </div>
+                    <span>For a better experience, please go fullscreen.  <button class="cta-button" id="fullscreenToggle">Go Fullscreen (F11)</button></span>
+                
+                    <span>Scroll Down &darr;</span>
                 </div>
             </div>
 
@@ -59,11 +96,11 @@
              
             <section id="story-parallax">
 
-                <!-- Scene 6 Layers -->
+                <!-- Scene 6 Layers 
                 <div class="parallax-layer" id="S6-L2"> <img src="img/Layers/S6-L2.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S6-L1"> <img src="img/Layers/S6-L1.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S6-L0"> <img src="img/Layers/S6-L0.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S6-FG"> <img src="img/Layers/S6-FG.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S6-FG"> <img src="img/Layers/S6-FG.webp" alt="" loading="eager"> </div>-->
 
 
                 <!-- Scene 5 Layers -->
@@ -81,6 +118,12 @@
                     </div>
                 </div>
 
+                <div class="parallax-layer" id="S5-Q-S"> <img src="img/Layers/S5-Quinn-Side.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S5-F-S"> <img src="img/Layers/S5-Falco-Side.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S5-Falco-0"> <img src="img/Layers/S5-FALCO-0.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S5-Falco-1"> <img src="img/Layers/S5-FALCO-1.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S5-Quinn"> <img src="img/Layers/S5-QUINN.webp" alt="" loading="eager"> </div>
+                <div id="S5-EXPO"></div>
 
 
 
@@ -129,7 +172,6 @@
 
 
 
-            <div class="EXPO"></div>
             <div class="Seven"></div>
             <div class="Quinn-lantern"><div class="Quinn"></div></div>
            
@@ -139,11 +181,11 @@
             <!-- SECTION 3: WISHLIST -->
             <div class="wishlist-section">
                 <img src="img/UI/Title.webp" alt="Title" onerror="this.style.display='none'">
-                <div class="hori-container">
-                    <button class="cta-button">Wishlist Now</button>
+                <span>Thanks for Scrolling.</span>
+                <!-- <div class="hori-container">
                     <button class="cta-button">Follow Us</button>
                 </div>
-            </div>
+            </div>-->
 
 
             <footer class="site-footer"><p>&copy; 2025–<span class="copyright-year"></span> K.T STUDIO. All Rights Reserved.</p></footer>

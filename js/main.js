@@ -3,6 +3,7 @@ import { startMobileGSAP } from './gsap-mobile.js';
 import { 
     lockScroll, 
     unlockScroll, 
+    showStartButton, 
     hideLoader, 
     killGSAP, 
     setSmootherInstance,
@@ -26,22 +27,6 @@ function handleResizeOrRotate() {
     }, 300);
 }
 
-function hideSplashGate() {
-    const splashGate = document.getElementById('autoplay-gate');
-    
-    gsap.to(splashGate, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.inOut",
-        onComplete: () => {
-            splashGate.style.visibility = 'hidden';
-            splashGate.style.pointerEvents = 'none';
-            splashGate.classList.remove('splash-active');
-            splashGateShown = true; 
-            unlockScroll();
-        }
-    });
-}
 
 function initGSAP() {
     lockScroll(); 
@@ -60,7 +45,6 @@ function initGSAP() {
     
     assetLoadPromise.then(() => {
         startGSAP();
-        hideLoader(); 
     });
 }
 
@@ -69,9 +53,11 @@ function startGSAP() {
 
     if (window.matchMedia(desktopRatioQuery).matches) {
         // Desktop/Wide Version
+        showStartButton(); 
         setSmootherInstance(startDesktopGSAP(s, q, f)); 
     } else {
         // Mobile/Portrait/Tall Monitor Version
+        hideLoader();
         setSmootherInstance(startMobileGSAP(s, q, f)); 
     }
 }
