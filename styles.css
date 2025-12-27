@@ -131,13 +131,13 @@ img{
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         opacity: 1;
         filter: 
-            drop-shadow(0 0 0.2vw #00ffff) 
-            drop-shadow(0 0 0.9vw #00ffff) 
-            drop-shadow(0 0 13vw #00ffff)
-            brightness(1.2);
+            drop-shadow(0 0 calc(var(--intensity, 1)* 0.2vw) #00ffff) 
+            drop-shadow(0 0 calc(var(--intensity, 1) * 0.9vw) #00ffff) 
+            drop-shadow(0 0 calc(var(--intensity, 1)* 13vw) #00ffff);
+            opacity: calc(var(--intensity, 1) + 0.01)
     }
     20%, 24%, 55% {
-        opacity: 0.8;
+        opacity: 0.2;
         filter: none;
     }
 }
@@ -169,8 +169,11 @@ img{
     background: #00ffff;
     border-radius: 10%;
     cursor: pointer;
-    box-shadow: 0 0 10px #00ffff;
+    box-shadow: 0 0 10px #28E1DC;
 }
+
+#volume-slider::-webkit-slider-thumb:hover {background: #B34229;}
+
 
 
 #story-parallax {
@@ -402,15 +405,14 @@ img{
 #S5-EXPO{
     position: absolute;
     justify-self: center;
-    background-color: rgb(232, 254, 255);
-    border-radius: 50%;
-    top: -30%;
-    width: 190vw;
+    background-color: #ffffff;
+    border-radius: 100%;
+    top: -75%;
+    width: 150vw;
     height: 250vh;
     box-shadow: 
-    0 0 120vw rgb(232, 250, 255),
-    0 0 140vw rgb(75, 189, 255),
-    0 0 260vw rgb(0, 128, 255);
+    0 0 10vw rgb(255, 255, 255),
+    0 0 260vw rgb(0, 255, 251);
 }
 
 

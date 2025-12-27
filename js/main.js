@@ -34,16 +34,30 @@ function initGSAP() {
     gsap.registerPlugin(MotionPathPlugin ,Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
 
     const parallaxImages = document.querySelectorAll('#story-parallax img');
-    const imagesToLoad = Array.from(parallaxImages).filter(img => !img.complete);
+    const audioFiles = document.querySelectorAll('audio');
 
-    const assetLoadPromise = Promise.all(
-        imagesToLoad.map(img => new Promise(resolve => {
+    // 1. Map images to promises
+    const imagePromises = Array.from(parallaxImages).map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
             img.addEventListener('load', resolve);
-            img.addEventListener('error', resolve); 
-        }))
-    );
-    
-    assetLoadPromise.then(() => {
+            img.addEventListener('error', resolve); // Resolve anyway to avoid hanging
+        });
+    });
+
+    // 2. Map audio to promises
+    const audioPromises = Array.from(audioFiles).map(audio => {
+        // If it's already buffered enough to play through
+        if (audio.readyState === 4) return Promise.resolve();
+        return new Promise(resolve => {
+            // 'canplaythrough' fires when the browser thinks it can play without stopping
+            audio.addEventListener('canplaythrough', resolve, { once: true });
+            audio.addEventListener('error', resolve);
+        });
+    });
+
+    // 3. Wait for everything
+    Promise.all([...imagePromises, ...audioPromises]).then(() => {
         startGSAP();
     });
 }

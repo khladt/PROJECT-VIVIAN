@@ -70,7 +70,7 @@ export function startDesktopGSAP(s, q, f) {
 
 
     .fromTo('#ash-0', { volume: 1.0}, {volume:0.0, duration: 15.5 }, "<+=5")
-    .fromTo('#ash-1', { volume: 0.0}, {volume:0.5, duration: 5.5 }, "<")
+    .fromTo('#ash-1', { volume: 0.0}, {volume:0.0, duration: 15.5 }, "<+=5")
 
     .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },"<+=10")
     .to('.character-name', {text: s, duration: 5 })
@@ -149,6 +149,23 @@ export function startDesktopGSAP(s, q, f) {
     .set('.Seven', {x: "400%", y: "1000%", backgroundImage: 'url("img/Seven/sss-s1.png")',className: 'Seven is-front',filter: "brightness(0%)",}, "<")
     .to('#s1-bg', { volume: "0.0", duration: 14.5 }, "<")
 
+
+
+
+    .fromTo('#trem', 
+    { volume: 0.0}, { volume: 0.5, duration: 25.5,
+        onStart: () => {
+            const gyardd = document.getElementById("trem");
+            gyardd.pause();
+            gyardd.currentTime = 0;
+            gyardd.play();
+
+        }
+    }, 
+    "<"
+)
+
+
 .fromTo('#s2-bg', { volume: "0.0"}, {volume:"0.6", duration: 24.5 }, "<")
 
 .fromTo('#S2-FG', {filter: "brightness(0%) saturate(0%)", y:"250%"}, {filter: "brightness(100%) saturate(80%)",y:"-65%", duration: 31 },"<+=10")
@@ -163,7 +180,13 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S2-L1', {filter: "brightness(5%) saturate(100%)",y:"-120%", duration: 22 },"<")
 .to('#S2-L2', {filter: "brightness(5%) saturate(100%)",y:"-160%", duration: 21 },"<")
 .to('#S2-BG', {opacity:0.0,y:"-100%", duration: 4 },"<")
+
 .fromTo('#S2-LW', {scale:0.2,opacity:0.0, x:"37vw" ,y:"-315%"}, {opacity:1.0,y:"0%", duration: 20.5 },"<")
+
+.to({}, {
+    onStart: () => document.getElementById("lw-fall").play(),
+    onReverseComplete: () => document.getElementById("lw-fall-rev").play(),
+}, "<+=10")
 
 .fromTo('#S3-L0', {opacity:0.0}, {opacity:1.0,y:"-10%", duration: 1 },"<")
 .fromTo('#S3-BG', {opacity:0.0,y:"0%"}, {opacity:1.0, duration: 20 },"<")
@@ -182,13 +205,16 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .fromTo('.dialogue-text',{text:""} ,{text: "🎶 Take Oooon m—", duration: 15 },"<")
 
-.fromTo('#S3-LE', {scale: 0.5,y:"-200%",x:"30%"}, {y:"-35%", duration: 40 },"<")
+.fromTo('#S3-LE', {scale: 0.5,y:"-200%",x:"30%"}, {y:"-35%", duration: 40, },"<")
+.fromTo("#ele",{volume: 0.0} , {volume: 1.0, duration: 10},"<")
+
 
 .to('#S3-BG', {y:"-20%" ,duration: 80 },"<")
 .to('#S3-L0', {y:"-30%",duration: 80 },"<")
 
 
 .to('.dialogue-box',{x:"0vw",y:"-55vh", duration: 10 },"<+=25")
+
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
@@ -211,6 +237,8 @@ export function startDesktopGSAP(s, q, f) {
 
 
 .to('#S2-LW', {opacity:0.3,y:"17%",duration: 5},"+=10")
+.to("#ele",{volume: 0.0, duration: 10},"<")
+
 
 .to('.dialogue-box', {x:"-15vw",y:"-40vh", duration: 2 },"<")
 .to('.dialogue-text', {text: "", duration: 10 },"<")
@@ -222,6 +250,10 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S3-BG', {y:"-30%" ,duration: 8 },"<")
 .to('#S3-L0', {y:"-50%",duration: 8 },"<")
 .fromTo('#S3-LS',{x:"-98%",y:"12%",opacity:0.0},{opacity:1.0,duration:5},'<')
+.to({}, {
+    onStart: () => document.getElementById("lw-hit").play(),
+    onReverseComplete: () => document.getElementById("lw-hit-rev").play(),
+}, "<+=8")
 
 .to('#S3-FG-0', {y:"-100%", duration: 35 })
 .to('#S3-FG-1', {y:"-100%", duration: 15 },"<")
@@ -232,9 +264,31 @@ export function startDesktopGSAP(s, q, f) {
 
 .to('#s2-bg', { volume: "0.0", duration: 14.5 }, "<")
 
+
 .fromTo('#S4-FG',{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 35},'<+=5')
 
 .fromTo('.Quinn-lantern',{scale: 2.3,y:'30%',x:'-80%', opacity:0.0},{x:'-75%',opacity:0.5,duration: 20})
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<")
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=5")
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=15")
+
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=20")
 
 .set('.Seven', {x: "400%", y: "1000%", backgroundImage: 'url("img/Seven/sss-s4.png")',scaleX:-1,className: 'Seven is-side',filter: "brightness(100%)",}, "<")
 .fromTo('.Seven',{x: "-100%",y:'45%'},{x:'100%',y: "50%", duration: 34}, "<")  
@@ -245,6 +299,17 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "You never really talk about this Arno fella, the one you are trying to kill!", duration: 15 },"<")
 
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=5")
+
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<5")
+
 .set('.Quinn',{className: 'Quinn a'},'<')
 
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
@@ -254,12 +319,38 @@ export function startDesktopGSAP(s, q, f) {
 
 .to('.Seven',{className:'Seven is-front',scaleX:1,duration:0},"<")
 
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<")
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=5")
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=15")
+
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<+=20")
+
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
 .to('.Quinn-lantern',{opacity: 1.0,x:'-65%',duration: 2})
 .set('.Quinn',{className: 'Quinn c'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern a'},'<')
+
+.to({}, {
+    onStart: () => playRandomStep(),
+    onReverseComplete: () => playRandomStep()
+}, "<")
 
 .to('.Quinn-lantern',{x:'-60%',duration: 5})
 .set('.Quinn',{className: 'Quinn d'},'<')
@@ -618,6 +709,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "Pretty sure my audio drivers broke again. I can hear your footstep twice.", duration: 35 },">+=15")
 
 .to("#ash-1",{volume:0.0, duration: 40},"<")
+.to("#trem",{volume:0.0, duration: 40},"<")
 
 .to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
 .to('.character-name', {text: q, duration: 3 },"<")
@@ -770,7 +862,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-falco', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 0 },"<")
-.to('.dialogue-text',{text: "EXPLOSION! <br> <i>[I'm still working on a name...]</i>", duration: 35 },">")
+.to('.dialogue-text',{text: "EXPLOSION! <br> <i>[I'm still working on a name...]</i>", duration: 8 },">")
 
 
 .to('.character-name', {text: f, duration: 3 },">+=25")

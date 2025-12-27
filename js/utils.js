@@ -32,27 +32,19 @@ export function hideLoader() {
     } else {
         unlockScroll();
     }
-    document.getElementById("s0-bg").play()
-    document.getElementById("s1-bg").play()
-    document.getElementById("s2-bg").play()
-    document.getElementById("ash-0").play()
-    document.getElementById("ash-1").play()
+
+
 }
 
 
 export function showStartButton() {
-    const startBtn = document.getElementById('start-btn');
-
     const tl = gsap.timeline();
 
     tl
     .to("#loading-bar",{ backgroundColor:"#00ffff", repeat: -1, yoyo: true, duration: 1 })
     .to("#start-btn", { visibility: 'visible', opacity: 1, duration: 2,},"<")
-    .to("#loading-text",{text:"Everything is ready. Press Start to Commence" , duration: 2},"<")
+    .to("#loading-text",{text:"Ready when you are." , duration: 2},"<")
     .to("#loading-title",{text:"./PROJECT VIVIAN" , duration: 2},"<")
-
-
-    startBtn.addEventListener('click', hideLoader);
 }
 
 
@@ -92,44 +84,69 @@ export function playRandomStep() {
 
 
 
-const volumeSlider = document.querySelector('#volume-slider');
-const feedbackSound = document.getElementById('vslider'); // Add this ID to an <audio> tag
-// Desktop Events
-volumeSlider.addEventListener('mousedown', () => feedbackSound.play());
-window.addEventListener('mouseup', () => feedbackSound.pause());
-
-volumeSlider.addEventListener('touchstart', () => feedbackSound.play());
-window.addEventListener('touchend', () => feedbackSound.pause());
-
-
+// 1. Setup the ONE and ONLY Audio Context
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const masterBus = audioCtx.createGain();
-masterBus.gain.value = 0.0;
 masterBus.connect(audioCtx.destination);
 
-// 1. Identify all your audio elements
-const audioElements = Array.from(document.querySelectorAll('audio'));
+// Set initial volume (from session storage or default to 0.5)
+const savedVolume = sessionStorage.getItem('userVolume') || 0.5;
+masterBus.gain.value = savedVolume;
+document.querySelector('#volume-slider').value = savedVolume;
 
-// 2. Loop through them and connect them to the Master Bus
+// 2. Connect all audio tags (Only do this once!)
+const audioElements = Array.from(document.querySelectorAll('audio'));
 audioElements.forEach(el => {
-    // Create the source node for this specific element
     const source = audioCtx.createMediaElementSource(el);
-    // Plug it into the master bus
     source.connect(masterBus);
 });
 
-// 3. Your slider remains exactly the same
-const savedVolume = sessionStorage.getItem('userVolume');
+// 3. Start Button Logic
+const startBtn = document.getElementById('start-btn');
+startBtn.addEventListener('click', async () => {
+    hideLoader();
+    
+    // IMPORTANT: Resume the existing context
+    if (audioCtx.state === "suspended") {
+        await audioCtx.resume();
+    }
 
-if (savedVolume !== null) {
-    volumeSlider.value = savedVolume;
-    masterBus.gain.value = savedVolume;
-}
+    // Play your specific background tracks
+    const toPlay = ["s0-bg", "s1-bg", "s2-bg", "ash-0", "trem","ele"];
+    toPlay.forEach(id => {
+        const el = document.getElementById(id);
+        el.play().catch(e => console.log("Playback blocked for:", id));
+    });
+});
 
+// 4. Volume Slider Logic
+const neonImg = document.querySelector('.content-box img');
+document.querySelector('#volume-slider').addEventListener('input', (e) => {
+    const val = e.target.value;
+    masterBus.gain.value = val;
+    sessionStorage.setItem('userVolume', val);
+    
+    // Update the neon brightness we discussed earlier!
+    neonImg.style.setProperty('--intensity', val);
+});
+
+// 5. Slider Feedback Sound
+const volumeSlider = document.getElementById('volume-slider');
+const feedbackSound = document.getElementById('vslider');
+volumeSlider.addEventListener('mousedown', () => feedbackSound.play());
+window.addEventListener('mouseup', () => feedbackSound.pause());
+
+
+
+
+const neonImage = document.querySelector('.content-box img');
+neonImg.style.setProperty('--intensity', savedVolume);
 document.querySelector('#volume-slider').addEventListener('input', (e) => {
     masterBus.gain.value = e.target.value;
     sessionStorage.setItem('userVolume', e.target.value);
+    neonImage.style.setProperty('--intensity', e.target.value);
 });
+
 
 const allButtons = document.querySelectorAll('button');
 const pressSFX = document.getElementById('press');
