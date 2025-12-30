@@ -124,6 +124,9 @@ if (aspectRatio > 1.81){
     .to('#chara-seven',{opacity:1,duration:1},"<")
     .to('.character-name', {text: s, duration: 7 },"<")
     .to('.dialogue-text',{text: "Come on Come on Come on Come on, let's go!", duration: 10 },"<")
+    .to('.dialogue-box', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
+    .to('.Seven', {y:"-=55", yoyo: true, repeat: 15, duration: 5 }, "<")
+
     .to('.Seven',{className:'Seven is-front-wave'},'<')
     .to('.Seven',{className:'Seven is-front'},'<+=2')
     .to('.Seven',{className:'Seven is-side'},'<+=2')
@@ -137,7 +140,7 @@ if (aspectRatio > 1.81){
 
 
 
-    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },"+=10")
+    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },"<+=18")
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.character-name', {text: q, duration: 7 },"<")
@@ -233,7 +236,9 @@ if (aspectRatio > 1.81){
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .fromTo('.dialogue-text',{text:""} ,{text: "🎶 Take Oooon m—", duration: 15 },"<")
 
+.to('#S3-LE', {x: "-=5", yoyo: true, repeat: 55, duration: 2 }, "<")
 .fromTo('#S3-LE', {scale: 0.5,y:"-200%",x:"30%"}, {y:"-35%", duration: 40, },"<")
+
 .fromTo("#ele",{volume: 0.0} , {volume: 1.0, duration: 10},"<")
 
 
@@ -772,8 +777,10 @@ if (aspectRatio > 1.81){
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
+.to('.dialogue-box', {x:"-=25",y:"-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
 .to('.dialogue-text',{text: "IT IS I!!", duration: 15 },"<")
 .to('.dialogue-text',{text: "THE GRRRRRREAT FALCO!",duration: 20},">+=10")
+.to('.dialogue-box', {y:"-=10", yoyo: true, repeat: 15, duration: 2 }, "<")
 
 .to('.dialogue-text',{text: "Savior of humanity.",duration: 25},">+=15")
 .to('.dialogue-text',{text: "",duration: 0},">+=15")
@@ -791,7 +798,8 @@ if (aspectRatio > 1.81){
 .set('.shead',{className:"shead shead-talk"},"<")
 .to('.shead',{x:"-100%",scale:2.5,duration:15},"<")
 .fromTo('.shead img',{scale:0.0},{rotation:"-10%",y:"-60%",x:"-30%",scale:0.7,duration:15},"<")
-.to('.dialogue-text',{text: "Hey! Is that my hat?!", duration: 10 },">")
+.to('.dialogue-box', { x: "-=15",y:"-=15", yoyo: true, repeat: 15, duration: 2 }, "<")
+.to('.dialogue-text',{text: "Hey! Is that my hat?!", duration: 10 },"<")
 
 .to("#S5-Falco-0",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
 .to('#S5-Falco-3',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
@@ -829,7 +837,7 @@ if (aspectRatio > 1.81){
 .to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
 .to('#S5-Falco-4',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
 .fromTo('#anger-head',{opacity:0.0},{opacity:"1.0",duration:2},"<")
-
+.to('.dialogue-box', { x: "-=15",y:"-=15", yoyo: true, repeat: 35, duration: 2 }, "<")
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .to('.dialogue-text',{text: "WE.", duration: 25 },">")
 .to('.dialogue-text',{text: "", duration: 0 },">+5")
@@ -867,6 +875,7 @@ if (aspectRatio > 1.81){
 .set('.shead',{scaleX: 2.5,className:"shead shead-side",duration:15},">+=15")
 
 .to('.dialogue-text',{text: "", duration: 0 },">+=15")
+.to('.dialogue-box', { x: "-=15",y:"-=15", yoyo: true, repeat: 15, duration: 2 }, "<")
 .to('.dialogue-text',{text: "Or did you steal it too! <i>Like you stole my hat</i>.", duration: 25 },">")
 .to('.shead img',{scale:1.0 ,duration:15},"<")
 .to('.shead',{className:"shead shead-talk" ,duration:15},"<")
@@ -880,8 +889,8 @@ if (aspectRatio > 1.81){
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.set('#S5-Falco-4',{className:"parallax-layer f4anim"},"<")
-
+.to('.dialogue-box', { x: "-=25", yoyo: true, repeat: 55, duration: 2 }, "<")
+.to('#S5-Falco-4', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 55, duration: 2 }, "<")
 .to('.dialogue-text',{text: "I DIDN'T STEAL ANYTHING!!!!", duration: 25 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=25")
 .to('.dialogue-text',{text: "YOU GIFTED TO ME THIS DAMN <i>HAT</i>.", duration: 25 },"<")
@@ -942,6 +951,8 @@ if (aspectRatio > 1.81){
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('.dialogue-text',{text: "HOLY $&!%", duration: 10 },"<")
+.to('#S5-Falco-1', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
+
 
 .to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">=+15")
 .to('.character-name', {text: s, duration: 3 },"<")
@@ -1038,7 +1049,8 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .to('.dialogue-text',{text: "Don't buy his weak act. He can take us out any second now.", duration: 25 },">")
 .to('.dialogue-text',{text: "", duration: 0 },">+=10")
-.to('.dialogue-text',{text: "DO IT NOW!", duration: 5 },">")
+.to('.dialogue-box', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 2, duration: 2 }, "<")
+.to('.dialogue-text',{text: "DO IT NOW!", duration: 5 },"<")
 
 .to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
 
@@ -1053,6 +1065,7 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text',{text: "This is for stealing my HAT.", duration: 15 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=15")
 .to('.dialogue-text',{text: "EXPLOSION!", duration: 15 },">")
+.to('.dialogue-box', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 2, duration: 2 }, "<")
 .set(".Seven",{className: 'Seven is-expo'},"<")
 
 
@@ -1087,6 +1100,7 @@ if (aspectRatio > 1.81){
 
 .set(".Seven",{className: 'Seven is-expo'},"<")
 .to('.dialogue-text',{text: "SUPER NOVA!", duration: 15 },">")
+.to('.dialogue-box', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
 
 .to('.dialogue-text',{text: "", duration: 0 },">+=10")
 
@@ -1123,6 +1137,7 @@ if (aspectRatio > 1.81){
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-box', {scale:1.4,y:"-=25" ,x: "-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
 .to('.dialogue-text',{text: "OH COME OOOOOOON!!!", duration: 5 },"<")
 
 .to("#S5-Falco-5",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
@@ -1151,25 +1166,27 @@ if (aspectRatio > 1.81){
     "<"
 )
 
-.fromTo('#S5-EXPO',{scale:"0"},{scale:"1",duration:15,
+.to('.parallax-layer', {y:"-=55" ,x: "-=55", yoyo: true, repeat: 25, duration: 2 }, "<")
+.fromTo('#S5-EXPO',{scale:"0"},{scale:"0.05",duration:35},"<")
+.fromTo('.Seven',{filter:"brightness(100%)"},{filter:"brightness(5%)",duration:20},"<")
+.fromTo('#S5-Falco-1',{filter:"brightness(100%)"},{filter:"brightness(10%)",duration:20},"<")
+.fromTo('#S5-Quinn',{filter:"brightness(100%)"},{filter:"brightness(10%)",duration:20},"<")
 
+.to('#S5-EXPO',{scale:"1",duration:15,
     onStart: () => {
         const r1 = document.getElementById("ex");
         r1.currentTime = 0;
         r1.play();
+    }})
 
-    }},">")
-
-
-
-
-.to('#S5-Quinn',{y:"-50%",scale:"0.4",x:"-100%",duration:25},"<")
+.to('.Seven',{filter:"brightness(100)",duration:1},"<")
+.to('#S5-Quinn',{filter:"brightness(1.5)",y:"-50%",scale:"0.4",x:"-100%",duration:25},"<")
 .to('#S5-Q-S',{y:"-55%", x:"-100%",duration:10},"<")
 .to('#S5-F-S',{y:"55%",x:"100%",duration:10},"<")
 .to('#S5-Falco-0',{y:"-55%",x:"100%" ,duration:25},"<")
-.to('#S5-Falco-1',{y:"-55%",x:"100%" ,duration:25},"<")
+.to('#S5-Falco-1',{filter:"brightness(1.5)",y:"-55%",x:"100%" ,duration:25},"<")
 
-.to(".Seven",{scale:2,opacity:0.0,duration:15},"<")
+.to('.Seven',{opacity:0.0,scale:2,filter:"brightness(100%)",duration:1},"<")
 
 
 
@@ -1190,88 +1207,113 @@ if (aspectRatio > 1.81){
 //.fromTo("#S6-L1",{y:"150%"},{y:"-5%",duration:28}, "<")
 
 
-//Norina
-.to('.dialogue-box',{x:"20vw",y:"-50vh", duration: 15 },"+=55")
-.to('.character-name', {text: 'Norina', duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "And then what a hppanend?", duration: 15 },">")
 
-//Vivi
-.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=15")
-.to('.character-name', {text: s, duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "How should I know?", duration: 15 },">")
+.to('.dialogue-box', { x: "20vw", y: "-50vh", duration: 30, ease: "sine.inOut" }, "+=55")
 
-//Cyru
-.to('.dialogue-box',{x:"40vw",y:"-50vh", duration: 15 },">+=15")
-.to('.character-name', {text: 'Cyru', duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "It's your story pal.", duration: 15 },">")
-
-//VIVI
-.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=15")
-.to('.character-name', {text: s, duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "It's been like a really loooooooooooooooooooong time.", duration: 25 },">")
+.to('.dialogue-box', {boxShadow: "0 0 5px rgba(147, 112, 219, 0.7)", duration: 10 }, "<")
+.to('.character-name', { text: 'Norina', duration: 5 }, "<")
+.to(['#chara-falco', '#chara-quinn', '#chara-seven'], { opacity: 0, duration: 15 }, "<")
+.to('#chara-norina', { opacity: 1, duration: 15 }, "<")
+.to('.dialogue-text', { text: "", duration: 0, }, ">")
+.to('.dialogue-text', { text: "Vivi... darling... come on you can do this.", duration: 40, }, ">")
 
 
-//rahal
-.to('.dialogue-box',{x:"70vw",y:"-10vh", duration: 15 },">+=15")
-.to('.character-name', {text: 'Rahal', duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "I hope Quinn's alright...", duration: 15 },">")
+.to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 25, ease: "power2.out" }, ">+=15") 
+.to('.dialogue-box', { boxShadow: "0 0 0px rgba(0,0,0,0)", duration: 10 }, "<")
+.to('.character-name', { text: s, duration: 5 }, "<")
+.to('#chara-norina', { opacity: 0, duration: 10 }, "<")
+.to('#chara-seven', { opacity: 1, duration: 10 }, "<")
+.to('.dialogue-text', { text: "I'm trying! Alright?! It's hard to focus with everyone staring at my jar!", duration: 30 }, ">")
+
+.to('.dialogue-box', { x: "40vw", y: "-50vh", duration: 15, ease: "power1.inOut" }, ">+=20")
+.to('.character-name', { text: 'Cyru', duration: 5 }, "<")
+.to('.dialogue-text', { text: "C’mon, dude. It’s your story.", duration: 15 }, ">")
 
 
-//vivi
-.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=25")
-.to('.character-name', {text: s, duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "Oh yeah, here's your backpack, Arphop. Really got me in the roleplay HeHe.", duration: 25 },">")
-.fromTo('.inv-tool-icon',{scale:1.0},{scale:0.0, duration: 15 },"<")
+.to('.dialogue-box', { x: "60vw", y: "-15vh", duration: 15, ease: "back.out(2)" }, ">+=16")
+.to('.character-name', { text: 'Rahal', duration: 0.1 }, "<")
+.to(['#chara-seven', '#chara-quinn'], { opacity: 0, duration: 0.2 }, "<")
+.to('#chara-rahal', { opacity: 1, duration: 0.2 }, "<")
+.to('.dialogue-text', { text: "No wonder you're so thick! You can't even remember your own life?!", duration: 15.2 }, ">")
 
 
-//arphip
-.to('.dialogue-box',{x:"10vw",y:"-30vh", duration: 15 },">+=35")
-.to('.character-name', {text: 'Arphop', duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "Mm-HMM...", duration: 15 },">")
+
+.to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 8, ease: "power2.out" }, ">+=15") 
+.to('.character-name', { text: s, duration: 5 }, "<")
+.to('#chara-norina', { opacity: 0, duration: 10 }, "<")
+.to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
+.to('#chara-seven', { opacity: 1, duration: 10 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, "<")
+.to('.dialogue-text', { text: "Ay Ay Ay! I still have feelings you know!", duration: 15 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
+.to('.dialogue-text', { text: "Oh yeah... Thanks Arfop, for the backpack. Really got me in the roleplay.", duration: 25 }, ">")
+.to('.inv-tool-icon', {y: "+=30", scale: 0, rotation: -25, duration: 15, ease: "back.in(1.5)"}, ">-15")
+
+.to('.dialogue-box', { x: "10vw", y: "-30vh", duration: 5, ease: "back.out(2)" }, ">+=15")
+.to('.character-name', { text: 'Arfop', duration: 5 }, "<")
+.to(['#chara-seven', '#chara-norina'], { opacity: 0, duration: 15 }, "<")
+.to('#chara-arphop', { opacity: 1, duration: 15 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, "<")
+.to('.dialogue-text', { text: "Mm-HMM...", duration: 10 }, ">")
 
 
-//rahal
-.to('.dialogue-box',{x:"70vw",y:"-10vh", duration: 15 },">+=15")
-.to('.character-name', {text: 'Rahal', duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "Wait I just realized. THIS PIECE OF %#@! HAD A SON?!", duration: 15 },">")
+.to('.dialogue-box', {scale:1.5, x: "60vw", y: "-15vh", duration: 15 }, ">+=20")
+
+.to('.character-name', { text: 'Rahal', duration: 5 }, "<")
+.to('#chara-arphop', { opacity: 0, duration: 5 }, "<")
+.to('#chara-rahal-sur', {opacity: 1, duration: 5 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, "<")
+.to('.dialogue-text', { text: "Imagine if Falco was your real son?", duration: 25 }, ">")
+
+
+.to('.dialogue-box', { y: "-=20", yoyo: true, repeat: 5, duration: 2 }, ">+=20")
+.to('#chara-rahal-sur', {opacity: 0, duration: 5 }, "<")
+.to('#chara-rahal-laugh', {opacity: 1, duration: 5 }, "<")
+.to('.dialogue-text', { text: "PFFFFT HAHAHAHA!", duration: 20}, "<")
+
+
+.to('.dialogue-box', {scale:1.2 ,x: "60vw", y: "-80vh", duration: 8, ease: "power2.out" }, ">+=15") 
+.to('.character-name', { text: s, duration: 5 }, "<")
+.to('#chara-rahal-laugh', { opacity: 0, duration: 10 }, "<")
+.to('#chara-seven', { opacity: 1, duration: 10 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, "<")
+.to('.dialogue-text', { text: "What's so funny?!", duration: 15 }, ">")
+
+.to('.dialogue-text', { text: "", duration: 0}, ">+=15")
+.to('.dialogue-box', { x: "60vw", y: "-15vh", duration: 15 }, "<")
+.to('.character-name', { text: 'Rahal', duration: 5 }, "<")
+.to('#chara-seven', { opacity: 0, duration: 5 }, "<")
+.to('#chara-rahal-laugh', { opacity: 1, duration: 5 }, "<")
+
+.to('.dialogue-box', { y: "-=5", yoyo: true, repeat: 5, duration: 2 }, ">")
+.to('.dialogue-text', { text: "THAT MEANS...THAT MEANS...",letterSpacing:"2px", duration: 20}, "<")
+
+.to('.dialogue-text', { text: "", duration: 0}, ">+=15")
+.to('.dialogue-box', { y: "-=20", yoyo: true, repeat: 5, duration: 2 }, "<")
+.to('.dialogue-text', { text: "SOMEONE ACTUALLY FELL FOR YOU! HAHAHA!!",letterSpacing:"5px", duration: 20}, "<")
+
+.to('.dialogue-text', { text: "", duration: 0}, ">+15")
+.to('.dialogue-box', { y: "-=15", yoyo: true, repeat: 25, duration: 2 }, "<")
+.to('.dialogue-text', { text: "I DON'T KNOW IF I SHOULD LAUGH OR TAKE CRY FOR THE SAD WOMAN THAT TOUCHED YOU.",letterSpacing:"4px", duration: 40}, "<")
+.to('.dialogue-text', { text: "",letterSpacing:"4px", duration: 0}, ">+=15")
+
+
+// --- VIVI: The Indignant Sarcastic Idiot ---
+.to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 8 }, "<") 
+.to('.dialogue-box', { x: "-=15", yoyo: true, repeat: 15, duration: 2 }, "<")
+.to('#chara-rahal-laugh', { opacity: 0, duration: 1 }, "<")
+.to('#chara-seven', { opacity: 1, duration: 1 }, "<")
+.to('.character-name', { text: s, duration: 5 }, "<")
+.to(['#chara-norina', '#chara-rahal-sur'], { opacity: 0, duration: 10 }, "<")
+.to('#chara-seven', { opacity: 1, duration: 10 }, "<")
+.to('.dialogue-text', { text: "", duration: 0 }, "<")
+.to('.dialogue-text', { text: "I SAID I HAVE FEELINGS! <br><i>...and he's an ALLEGED son..</i>", duration: 35 }, ">")
+
 
 .to('.site-header',{opacity: 1, duration: 4 },">+=15")
+.to('.dialogue-text', { text: "", duration: 5 }, "<")
 .to('#s0-bg',{volume:1.0, duration: 15.5 }, "<")
-.to('.dialogue-box',{opacity:0, duration: 15 },"<")
-
-
+.to('.dialogue-box',{letterSpacing:"0px",opacity:0, duration: 15 },"<")
 
     return smootherInstance;
 }
@@ -1300,14 +1342,35 @@ function initSecretVivi() {
     const viviTl = gsap.timeline({ paused: true });
 
     viviTl
-        .to('.dialogue-box',{opacity:1,x:"70vw",y:"-30vh", duration: 0.1 },"+=5")
+        .call(()=>{document.getElementById("secret-vivi").style.filter = `brightness(${sessionStorage.getItem('userVolume') || 1.0})`;},null,0)
+        .to('.dialogue-box',{scale:1.0,opacity:1,x:"70vw",y:"-30vh", duration: 0.1 },"+=10")
+        .fromTo('#pft', { volume: 0.0 }, 
+        { 
+            volume: 0.2, 
+            duration: 5.5,
+            onStart: () => {
+                const r1 = document.getElementById("pft");
+                r1.currentTime = 0;
+                r1.play();
+
+            },
+            onReverseComplete: () => {
+                const gyard = document.getElementById("pft");
+                gyard.pause();
+                gyard.currentTime = 0;
+
+            }
+        }, 
+        "<"
+        )
         .to('.character-name', {text: "VIVI", duration: 0.1 },"<")
         .to('#chara-quinn', {opacity:0,duration:0},"<")
         .to('#chara-falco', {opacity:0,duration:0},"<")
+        .to('#chara-rahal-sur', {opacity:0,duration:0},"<")
         .to('#chara-seven', {opacity:1,duration:0},"<")
         .set('.dialogue-text',{text: ""},"<")
 
-        .set(vivi,{className:"Seven is-side",scale:1,scaleX:1})
+        .set(vivi,{className:"Seven is-side",scale:1,scaleX:1},"<")
         .to('.dialogue-text',{text: "Quinn!", duration: 1 },"<")
         .fromTo(vivi,{x:"-30vw",opacity:1.0}, { x: "70vw", duration: 3},"<")
         .set(vivi,{className:"Seven is-front"},">")
@@ -1339,7 +1402,16 @@ function initSecretVivi() {
         .set(vivi,{className:"Seven is-reading"},"+=3")
         .to('.dialogue-text',{text: "...", duration: 1 },"<")
         .set(vivi,{className:"Seven is-front"},"+=3")
-
+        .to('.dialogue-text',{text: "Where the hell is this music coming from?", duration: 1 },"<")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.2")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.2")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.2")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.2")
 
         .to('.dialogue-text',{text: "Quinn! WHERE ARE YOU?", duration: 2 },"+=5")
         .set(vivi,{className:"Seven is-side",scaleX:-1},"<")
@@ -1352,7 +1424,8 @@ function initSecretVivi() {
         .to('.dialogue-text',{text: "THIS CREEP IS JUST STARING AT ME.", duration: 2 },"<")
 
     
-        .to('.dialogue-text',{text: "Ama just go. beep bob", duration: 2 },">+=3")
+        .to('.dialogue-text',{text: "I'll just go. beep boop", duration: 2 },">+=3")
+        .to('#pft',{ volume: 0.0 ,duration:3},"<") 
         .set(vivi,{className:"Seven is-side"},"<")
         .to(vivi,{x:"110vw", duration: 3},"<")
 
@@ -1361,6 +1434,7 @@ function initSecretVivi() {
 
         .set(vivi,{className:"Seven is-side",scaleX:-1})
         .to('.dialogue-text',{text: "Did you say something?", duration: 1 },">+=5")
+        .to('#pft',{ volume: 0.2 ,duration:1},"<") 
         .to('.dialogue-box',{opacity:1,x:"50vw",y:"-30vh", duration: 0.5 },"<")
         .to(vivi,{x:"70vw", duration: 1},"<")
         .set(vivi,{className:"Seven is-front",scaleX:1},">")
@@ -1371,18 +1445,59 @@ function initSecretVivi() {
     
         .to('.dialogue-text',{text: "Hey wanna see something cool?.", duration: 1 },"+=1")
         .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
-        .call(() => {fullscreen(); console.log('EXPLOOOOOOSION!!');}, "+=1")
-    
-        .to('.dialogue-text',{text: "'API can only be initiated by a user gesture.'", duration: 2 },"+=1")
-        .set(vivi,{className:"Seven is-reading",scaleX:1},"<")
+        .to('.dialogue-text',{text: "EXPLOSION!!!.", duration: 1 },"+=3")
+        .set(vivi,{className:"Seven is-expo",scaleX:1},"<")
+
+        .call(() => {
+            fullscreen();
+            console.log('EXPLOOOOOOSION!!');
+        }, null, "+=1")
+
+        .to('.dialogue-text',{text: "Ummmm...", duration: 1 },"+=3")
+
+        .set(vivi,{className:"Seven is-reading",scaleX:1},"+=3")
+        .to('.dialogue-text',{text: "'API can only be initiated by a user gestu-'", duration: 3 },"<")
+        .to('.dialogue-text',{text: "", duration: 0 },"+=3")
+        .to('.dialogue-text', {text: {value: 'Uhhhh $@#$ @#$@@$ !)$*!(&',type: "html"},duration: 1}, ">")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<+=0.1")
+        .set(vivi,{className:"Seven is-back",scaleX:1},"<+=0.1")
 
         .to('.dialogue-text',{text: "Your "+getBrowserName()+" protected you this time.", duration: 2 },"+=3")
-        .set(vivi,{className:"Seven is-front",scaleX:1},"<")
-        .to('.dialogue-text',{text: "Farewell... "+randomname, duration: 2 },"+=3")
-        .to('.dialogue-text',{text: "I DON'T CARE IF IT'S NOT YOUR REAL NAME!.", duration: 1 },"+=4")
-        .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
-        .to('.dialogue-text',{text: "I'll just go....", duration: 2 },"+=2")
         .set(vivi,{className:"Seven is-side",scaleX:1},"<")
+        .set(vivi,{className:"Seven is-front-wave",scaleX:1},"+=0.01")
+
+        .to('.dialogue-text',{text: "", duration: 0 },"+=3")
+        .to('.dialogue-text',{text: "Farewell... "+randomname+".", duration: 4 },">")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<")
+
+        .to('.dialogue-text',{text: "I DON'T CARE IF IT'S NOT YOUR REAL NAME!.", duration: 1 },"+=3")
+        .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
+
+        .to('.dialogue-text',{text: "I'll just go....", duration: 2 },"+=2")
+        .to('#pft',{ volume: 0.0 ,duration:15},"<") 
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<")
+
         .to(vivi,{x:"110vw", duration: 20,ease: "power1.in"},"<")
         .to('.dialogue-text',{text: "...", duration: 1 },"<+=4")
         .to('.dialogue-box',{opacity:0,x:"50vw",y:"-30vh", duration: 0.5 },">+=1")

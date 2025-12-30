@@ -38,66 +38,9 @@
     }
 
 
-    .content-box{padding-top: 20vh;}
-    .content-box h3{font-size: 4vw;}
-    .cta-button{
-        font-size: 2.5vw;
-        width: 50vw;}
-    .content-box img{width: 100vw;}
+    .content-box img{width: 80vw;}
 
 
-.dialogue-box {
-    position: fixed;
-    bottom: 0;
-    max-width:69vw;
-    min-height: 9vh;
-    z-index: 1000;
-    
-
-    box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
-    border-radius: 74px;
-    display: flex;
-    align-items: center;
-    padding-right: 0.9vw;
-}
-
-.profile-image {
-    position: absolute;
-    width: 15vW;
-    height: auto;
-    aspect-ratio: 1 / 1;
-
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 128px;
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    position: absolute; 
-    opacity: 0; 
-}
-
-.dialogue-content {
-    padding-left: 18vw;
-    flex-grow: 1;
-    color: white;
-}
-
-.character-name {
-    font-size: 4.6vw;
-    font-weight: bold;
-    color: #ffd700;
-    text-transform: uppercase;
-}
-
-.dialogue-text {
-    font-size: 4.0vw;
-    line-height: 2.5vh;
-}
 
 
 .fog.fone {
@@ -117,7 +60,7 @@
 
 .site-footer {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1vh;}
+    font-size: 0.8vmax;}
 
 }
 

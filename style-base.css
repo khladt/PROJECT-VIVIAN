@@ -94,7 +94,7 @@ img{
     position: fixed;
     width: 100vw;
     font-family: 'Anton', Arial, sans-serif;
-    background-color: #00000000;
+    background-color: #000000d8;
     display: block;
     z-index: 1000; 
     color: white;
@@ -685,8 +685,8 @@ img{
     background-color: transparent;
     text-align: center;
     border: 0;
-    height: 16vh;
-    width:15vw;
+    height: 8vmax;
+    width:15vmax;
     cursor: pointer;
     font-size: 1vmax;
     background-image: url('img/UI/Button_UI_NORMAL.webp');
@@ -700,10 +700,9 @@ img{
 .cta-button:hover{
     background-color: transparent;
     border: 0;
-    
     text-align: center;
-    height: 16vh;
-    width:28vh;
+    height: 9vmax;
+    width:16vmax;
 
     cursor: pointer;
     

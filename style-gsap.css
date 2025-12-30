@@ -2,6 +2,16 @@
 @import url('https://fonts.cdnfonts.com/css/terminal-grotesque-open');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+@font-face {
+    font-family: 'vivi-lang';
+    src: url('fonts/vivi-lang.ttf') format('truetype');
+}
+
+.vivi-font {
+    font-family: 'vivi-lang', sans-serif;
+    color: #ffffff; 
+    text-transform: uppercase;
+}
 
 #story-parallax {
     position: relative;
@@ -28,7 +38,8 @@
 .dialogue-box {
     position: fixed;
     bottom: 0;
-    max-width:26vw;
+    max-width:25vmax;
+    min-width:10vmax;
     min-height: 0vh;
     z-index: 1000;
     
@@ -43,7 +54,7 @@
 
 .profile-image {
     position: absolute;
-    width: 6vW;
+    width: 5vmax;
     height: auto;
     aspect-ratio: 1 / 1;
 
@@ -64,7 +75,7 @@
 }
 
 .dialogue-content {
-    padding-left: 7vw;
+    padding-left: 6vmax;
     flex-grow: 1;
     color: white;
 }
@@ -80,8 +91,8 @@
 .dialogue-text {
     margin: 0;
     font-size: 1.1vmax;
-    line-height: 2.5vh;
-    margin-bottom: 2vh;
+    line-height: 1vmax;
+    margin-bottom: 1vmax;
 
 }
 
@@ -314,6 +325,12 @@ animation: anger-head-anim 0.9s infinite;
         Characters Layers
    ==================================================================================== */
 
+
+#secret-vivi {
+    /* Default to 1 (normal brightness) if the variable isn't set yet */
+    filter: brightness(var(--intensity, 1));
+    transition: filter 0.1s ease; /* Smooths out the flickering */
+}
 
 .quinn-character-s1{
     top: -0.5%;

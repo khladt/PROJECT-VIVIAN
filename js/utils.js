@@ -1,5 +1,6 @@
 
 export let smootherInstance = null; 
+const VIVICHARA = document.getElementById('secret-vivi');
 
 
 export function setSmootherInstance(instance) {
@@ -63,10 +64,8 @@ export function killGSAP() {
     if (smootherInstance) {
         smootherInstance.kill();
         smootherInstance = null;
-        console.log("ScrollSmoother killed.");
     }
     ScrollTrigger.refresh();
-    console.log("Old GSAP instance destroyed.");
 }
 
 
@@ -125,7 +124,6 @@ cornerSlider.value = savedVolume;
 neonImg.style.setProperty('--intensity', savedVolume);
 neonImg2.style.setProperty('--intensity', savedVolume);
 
-
 // 2. Connect all audio tags (Only do this once!)
 const audioElements = Array.from(document.querySelectorAll('audio'));
 audioElements.forEach(el => {
@@ -164,6 +162,7 @@ function updateVolume(value) {
     // 3. Optional: Update your Neon Intensity variable from earlier
     if(neonImg) neonImg.style.setProperty('--intensity', value);
     if(neonImg2) neonImg2.style.setProperty('--intensity', value);
+    if(VIVICHARA) VIVICHARA.style.filter = `brightness(${value})`;
 
     // 4. Save to session
     sessionStorage.setItem('userVolume', value);
@@ -407,5 +406,3 @@ slider.addEventListener('mousemove', (e) => {
 
 
 
-const VIVICHARA = document.getElementById('VIVI');
-VIVICHARA.addEventListener('click', () => {alert("Hey! You can look, but no touching!");});

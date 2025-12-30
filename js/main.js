@@ -23,7 +23,6 @@ function handleResizeOrRotate() {
         killGSAP(); 
         initGSAP(); 
         unlockScroll();
-        console.log("GSAP reloaded based on new dimensions.");
     }, 300);
 }
 
@@ -39,7 +38,6 @@ async function fetchName() {
         const response = await fetch('https://randomuser.me/api/?inc=name', { signal: controller.signal });
         const data = await response.json();
         randomname = data.results[0].name.first;
-        console.log("Found name:");
     } catch (e) {
         console.log("Name fetch");
     }
