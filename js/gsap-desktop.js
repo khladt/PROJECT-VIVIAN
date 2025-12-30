@@ -1448,10 +1448,7 @@ function initSecretVivi() {
         .to('.dialogue-text',{text: "EXPLOSION!!!.", duration: 1 },"+=3")
         .set(vivi,{className:"Seven is-expo",scaleX:1},"<")
 
-        .call(() => {
-            fullscreen();
-            console.log('EXPLOOOOOOSION!!');
-        }, null, "+=1")
+        .call(() => {console.log('EXPLOOOOOOSION();');}, null, "+=1")
 
         .to('.dialogue-text',{text: "Ummmm...", duration: 1 },"+=3")
 
@@ -1501,6 +1498,17 @@ function initSecretVivi() {
         .to(vivi,{x:"110vw", duration: 20,ease: "power1.in"},"<")
         .to('.dialogue-text',{text: "...", duration: 1 },"<+=4")
         .to('.dialogue-box',{opacity:0,x:"50vw",y:"-30vh", duration: 0.5 },">+=1")
+
+        .set(vivi,{className:"Seven is-side",scaleX:-1})
+        .to('.dialogue-text',{text: "YOU KNOW WHAT!!!", duration: 1 },">+=5")
+        .to('#pft',{ volume: 0.2 ,duration:1},"<") 
+        .to('.dialogue-box',{opacity:1,x:"50vw",y:"-30vh", duration: 0.5 },"<")
+        .to(vivi,{x:"70vw", duration: 1},"<")
+        .to('.dialogue-text',{text: "I DON'T LIKE YOU.", duration: 1 },"+=1")
+        .set(vivi,{className:"Seven is-front-wave",scaleX:1},">")
+        .to('.dialogue-text',{text: "MADE IN HEAVEN!!!!!!", duration: 1 },"+=1")
+        .set(vivi,{className:"Seven is-expo",scaleX:1},"<")
+        .call(() => {window.scrollTo({top: 0,left: 0,behavior: 'smooth'}); alert('If you find Quinn tell her to meet me by the tower. - VIVI');}, null, "+=0.8")
 
 
 
