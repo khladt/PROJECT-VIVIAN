@@ -43,6 +43,7 @@ async function fetchName() {
 }
 
 function initGSAP() {  
+    lockScroll();
     gsap.registerPlugin(MotionPathPlugin ,Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
 
     const parallaxImages = document.querySelectorAll('#story-parallax img');
@@ -52,7 +53,7 @@ function initGSAP() {
     const imagePromises = Array.from(parallaxImages).map(img => {
         if (img.complete) return Promise.resolve();
         return new Promise(resolve => {
-            lockScroll();
+            
             img.addEventListener('load', resolve);
             img.addEventListener('error', resolve); // Resolve anyway to avoid hanging
         });

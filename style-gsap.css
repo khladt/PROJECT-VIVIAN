@@ -296,7 +296,7 @@
 
 }
 
-.DRAMA{animation: drama-rahal 1.5s infinite ease-out;}
+.DRAMA{animation: drama-rahal 0.5s infinite ease-out;}
 
 @keyframes drama-rahal {
     0%{
@@ -329,7 +329,7 @@ animation: R-4drama-rahal 2s infinite;}
         rotate: 0deg;}
     50%{
         left: 30%;
-        top: -45%;
+        top: -52%;
         rotate: -10deg;}
     100%{
         left: 35%;
@@ -389,10 +389,75 @@ animation: R-4drama-rahal 2s infinite;}
 
 
 
+#S7-FG-00,#S7-FG-0,#S7-1,#S7-L0,#S7-L1,#S7-L2{
+    height: 100vh;
+    width: auto;
+    opacity: 1;
+    scale: 1;
+}
+
+
+#S7-FG-00,#S7-FG-0,#S7-FG-1,#S7-L0,#S7-L1,#S7-L2,#S7-BG,#S7-BG-CLOUDS,#VIVI-3D,#RAHAL-3D,#ARFOP-3D{animation: DayCycle 32s infinite;}
+
+@keyframes DayCycle{
+    0%{filter: hue-rotate(0deg) brightness(1);}
+    25%{filter: hue-rotate(90deg) brightness(1.5);}
+    50%{filter: hue-rotate(150deg) brightness(2);}
+    75%{filter: hue-rotate(300deg) brightness(1.5);}
+    100%{filter: hue-rotate(360deg) brightness(1);}
+}
+
+#S7-FG-00{opacity: 1;}
+
+#S7-FG-0{
+    background-image: url('img/Layers/S7/S7-FG-0.webp');
+    background-repeat: repeat-x;
+    background-position: 0% 100%;
+    background-size: 90% 34%;
+    animation: 
+    DayCycle 32s infinite,
+    S7-FG 48s steps(750) infinite;
+    top: -30%;
+    transform: scale(2)
+}
+
+
+#S7-FG-1{
+    background-image: url('img/Layers/S7/S7-FG-1.webp');
+    background-repeat: repeat-x;
+    background-position: 0% 100%;
+    background-size: 90% auto;
+    animation: 
+    DayCycle 32s infinite,
+    S7-FG 64s steps(2024) infinite;
+}
 
 
 
 
+#S7-L0{
+    height: 50vh;
+    top: 10%;
+    right: 5%;
+    width: auto;
+}
+
+#S7-L1{
+    height: 35vh;
+    top: 5%;
+    left: 5%;
+    rotate: 5deg;
+    width: auto;
+}
+
+
+#S7-L2{
+    height: 35vh;
+    top: 30%;
+    left: 27%;
+    rotate: 5deg;
+    width: auto;
+}
 
 
 
@@ -530,6 +595,21 @@ animation: anger-head-anim 0.9s infinite;
 }
 
 
+#file4 {
+    opacity: 0;
+    pointer-events: all;
+    position: absolute;
+    width: 15vw;
+    bottom: 0%;
+    right: 30%;
+    transform: translate(-50%, 50%); 
+    filter: brightness(0) saturate(0) hue-rotate(30deg);
+    cursor: pointer;
+    rotate: 70deg;
+    transition: transform 0.2s ease;
+}
+
+
 #file0:hover,#file1:hover,#file2:hover,#file3:hover,#file4:hover {
     transform: translate(-50%, 50%) scale(1.1);
     -webkit-filter: brightness(0.3) saturate(5) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(255, 0, 0));
@@ -653,14 +733,104 @@ animation: anger-head-anim 0.9s infinite;
 
 
 
+.RAHAL-3D{
+    position: absolute;
+    background-image: url('img/Chara/RAHAL-3D-WALK-SPRITE-SHEET.webp');
+    width: 4.3%;
+    height: 10%;
+    left: 50%;
+    top: 43%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: 
+    DayCycle 32s infinite,
+    rahal-3d-walk 1.5s steps(1) infinite;
+    transform: scale(1.5)
+}
+
+@keyframes rahal-3d-walk {
+    0%, 100%{background-position: 0%;}
+    10% {background-position: 11%;}
+    20% {background-position: 20.5%;}
+    30% {background-position: 30.5%;}
+    40% {background-position: 42%;}
+    50% {background-position: 53.5%;}
+    60% {background-position: 66%;}
+    70% {background-position: 77%;}
+    80% {background-position: 88%;}
+    90% {background-position: 100%;}
+}
+
+
+.VIVI-3D{
+    position: absolute;
+    background-image: url('img/Chara/VIVI-3D-DEFAULT-SPRITE-SHEET.webp');
+    width: 2%;
+    height: 3%;
+    top: 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.5);
+    animation: 
+    DayCycle 32s infinite,
+    vivi-default-3d-walk 1.5s steps(1) infinite;
+}
+
+.VIVI-3D-READING{
+    background-image: url('img/Chara/VIVI-3D-READING-SPRITE-SHEET.webp');
+    animation: 
+    DayCycle 32s infinite,
+    vivi-reading-3d-walk 1.5s steps(1) infinite;
+}
+
+@keyframes vivi-default-3d-walk {
+    0%, 100%{
+        left: 48%;
+        background-position: 0%;}
+    10% {background-position: 22%;}
+    30% {background-position: 42%;}
+    50% {
+        left: 47.8%;
+        background-position: 59%;}
+    70% {
+        left: 47.7%;
+        background-position: 80%;}
+    90% {
+        left: 47.8%;
+        background-position: 105%;}
+}
+
+
+.ARFOP-3D{
+    position: absolute;
+    background-image: url('img/Chara/ARFOP-3D-WALK-SPRITE-SHEET.webp');
+    width: 3%;
+    height: 6%;
+    left: 55%;
+    top: 47.5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.5);
+    animation:
+        DayCycle 32s infinite,
+        arfop-3d-walk 1.3s infinite steps(1);
+}
 
 
 
 
-
-
-
-
+@keyframes arfop-3d-walk {
+    0%, 100%{background-position: -0.5%;}
+    10% {background-position: 11%;}
+    20% {background-position: 22%;}
+    30% {background-position: 33%;}
+    40% {background-position: 44%;}
+    50% {background-position: 55%;}
+    60% {background-position: 66%;}
+    70% {background-position: 78%;}
+    80% {background-position: 89%;}
+    90% {background-position: 100%;}
+}
 
 
 
@@ -671,6 +841,11 @@ animation: anger-head-anim 0.9s infinite;
 /* ==========================================
         Animations
    ==================================================================================================================== */
+
+@keyframes S7-FG{
+    from{background-position: 0% 100%;}
+    to{background-position: 1720px 100%;}
+}
 
 
    @keyframes fogAnim{
