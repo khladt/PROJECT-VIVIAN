@@ -1933,7 +1933,7 @@ function initSecretVivi() {
             viviTl.to('.dialogue-text',{text: "By the way, I've found this in the dark. <br><br> <i>I don't think it's mine.</i>", duration: 1 })
             .to('.dialogue-text',{text: "", duration: 0 },"+=1.5")
             .set(vivi,{className:"Seven is-front-wave",scaleX:1},">")
-            .to('.dialogue-text',{text: "Here you have it.", duration: 1 },"<")
+            .to('.dialogue-text',{text: "Here! you have it.", duration: 1 },"<")
             .call(() => {addItemToBackpack(files.quinnLogs, '');}, null, "<")
             .to('.dialogue-text',{text: "", duration: 0 },"+=2")
             .to('.dialogue-text',{text: "But before you go and read it!", duration: 1 },">")

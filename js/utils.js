@@ -66,18 +66,17 @@ export const files = {
         pages:[
             `<b>Louis Wills — Classified Personal Record</b><br><br>
 
-            I am… I remain. I collect the shards of my name like broken glass. <br>
+            I… I remain. I collect the shards of my name like broken glass. <br>
             Louis Wills. Louis Wills. Louis Wills. If I say it, perhaps I'll wake up from this weird dream.<br><br>
 
-            One moment there was ground and sound and weight, <br> and then there was <i>everything at once</i>.<br><br>
+            One moment there was ground and sound and weight, <br> and for a moment there was <i>Nothing</i>.<br><br>
     
             <b>I felt my world fracture.</b><br> Fracture like a glass under a hammer<br><br>
     
             I felt pressure without force.<br>
             Motion without direction. <br><br>
 
-            I am afraid. Afraid that if I were to stop writing.<br>
-            I am afraid that when I do, whatever is holding me together<br> will realize I am dead.`
+            I am afraid. Afraid that if I were to stop writing, whatever is holding me together<br><b> will realize I am dead.</b>`
     ]
     },
 
@@ -99,9 +98,10 @@ export const files = {
             I turned my gaze to the sky, bracing for the heat to peel my skin or the radiation to blind me.<br>
             <b>Nothing.</b><br><br>
             The air entered my lungs. My throat didn't close.<br><br>
+            The sun warmed my face, My face wasn't burned.
 
 
-            This is not my world.<br>
+            This is not my world.<br><br>
             <b>Did I truly escape?</b><br>`
     ]
     },
@@ -225,9 +225,9 @@ falco:{
     title:"VIVI AUDIO LOG - 47",
     pages:[
         `
-        <b>VIVI:</b> "Let me go, you psycho!"<br><br>
+        <b>VIVI:</b> "Let me go, YOU PSYCHO!"<br><br>
 
-        <b>FALCO:</b> "Father! It’s me. Look at me! I know you are in there. Just talk to me!"<br><br>
+        <b>FALCO:</b> "Father, It’s me! Look at me! Please come back."<br><br>
 
         <b>VIVI:</b> "I don't know you! You creep, leave me alone!"<br><br>
 
@@ -237,7 +237,7 @@ falco:{
 
         <b>FALCO:</b> "I have Louis's research, I'll start from there. Just please help me out over here!"<br><br>
 
-        <b>VIVI:</b> "You have serious issues, kid. You can’t just kidnap people and expect them to play 'Father and Son' with you. It’s weird. It’s really awkward."<br><br>`,
+        <b>VIVI:</b> "You have serious issues, kid. You can’t just kidnap people and expect them to play 'Father and Son' with you. It’s weird."<br><br>`,
 
         `<b>VIVI:</b> "QUINNNNNNNNNN!"<br><br>
 
@@ -249,35 +249,35 @@ falco:{
 
         <b>FALCO:</b> "You don't even look at me... you just scan the room for a ghost to come home."<br><br>
 
-        <b>VIVI:</b> "Sheesh boy, that's s-something... Look, I'm sorry for what you are going through, really kid. But can yo-"<br><br>
+        <b>VIVI:</b> "Sheesh boy, that's s-something... Look, I'm sorry for what you are going through, really kid. But can yo—"<br><br>
 
         <b>FALCO:</b> "Did you even love me?"<br><br>
 
-        <b>VIVI:</b> "Oh PLEEASE. someone help me... I can't handle this."<br><br>
+        <b>VIVI:</b> "Oh PLEEASE. someone. help. me... <i>I can't handle this.</i>"<br><br>
 
         <b>VIVI:</b> "QUINNNN PLEASE I'M BEGGING YOU."<br><br>`,
 
         `<b>FALCO:</b> [Sobbing] "Don't worry, Father."<br><br>
 
-        <b>FALCO:</b> "I’ll find a way to bring you back. I’ll save you. I’ll save the world."<br><br>
+        <b>FALCO:</b> "I’ll find a way to bring you back. I’ll save you and the world."<br><br>
 
         <b>FALCO:</b> "I’ll make you proud. I’ll make you look at me the way you looked at her."<br><br>
 
-        <b>VIVI:</b> "Yeah, sure sure. Do that. Go save the world. Just do it somewhere else."<br><br>
+        <b>VIVI:</b> "Yeah, sure sure. Do that. Go save your daddy and the world, or whatever."<br><br>
 
-        <b>VIVI:</b> "And LEAVE ME BE!"<br><br>
+        <b>VIVI:</b> "JUST LEAVE ME BE!"<br><br>
 
-        <b>VIVI:</b> "QUINNNNNN! THERE YOU ARE!"<br><br>
+        <b>VIVI:</b> "QUINNNNNN! PLEAS— Oh... There you are!"<br><br>
 
-        <b>FALCO:</b> "Quinn?!"<br><br>
+        <b>FALCO:</b> "Quinn?!"<br><br>`,
 
-        <b>QUINN:</b> "Give him back, Falco."<br><br>`,
+        `<b>QUINN:</b> "Give him back, Falco."<br><br>
 
-        `<b>FALCO:</b> "You are disgrace! After everything he's done for you, you still want to kill him?!"<br><br>
+        <b>FALCO:</b> "You are a disgrace! After everything he's done for you, you still want to kill him?!"<br><br>
 
         <b>FALCO:</b> "He is already GONE! Do you really have to kick his corpse?!"<br><br>
 
-        <b>FALCO:</b> "The world is dying, if not dead already. Why can't you just. LEAVE. US. ALONE.!?"<br><br>
+        <b>FALCO:</b> "Why can't you just. LEAVE. US. ALONE.!?"<br><br>
 
         <b>FALCO:</b> "It's not like it's a new thing for you!"<br><br>
 
@@ -365,7 +365,7 @@ projectv:{
         '<b>THE MATERIAL:</b> The defining breakthrough of <b>Project VIVIAN</b> was not the Pod itself, but the discovery of its construction medium.<br>' +
         'The material was first observed forming naturally in regions surrounding the <b>World Shard</b>.<br><br>'+
         'Beyond the Shard’s range, the material exhibits absolute structural stability.<br>' +
-        'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.' +
+        'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.<br>' +
 
         'Proximity to the Shard produces <b>the inverse effect.</b><br>' +
         'Within close range, it becomes moldable, and responsive to applied force, comparable to soft composite clay.<br><br>',
@@ -397,8 +397,8 @@ quinn:{
 
         I remember the first time I saw you.<br>
         You do not remember it the same way.<br> You were too young. Too busy surviving.<br>
-        You were watching hands, not faces. Watching exits.<br>
-        You had already learned the habits of a hunter... and a hunted thing.<br>
+        You were watching hands, Watching exits.<br>
+        You had already learned the habits of a hunter... and a hunted.<br>
         That day frightened me, it was like looking in the mirror.<br>
         <b>You were on the same path I was...</b><br><br>`+
 
